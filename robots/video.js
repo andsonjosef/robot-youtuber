@@ -8,9 +8,9 @@ const rootPath = path.resolve(__dirname, '..')
 async function robot() {
     const content = state.load();
 
-   // await convertAllImages(content);
-   // await createAllSentenceImages(content);
-  //  await createYouTubeThumbnail();
+    await convertAllImages(content);
+    await createAllSentenceImages(content);
+    await createYouTubeThumbnail();
     await createAfterEffectsScript(content);
     await renderVideoWithAfterEffects();
 
