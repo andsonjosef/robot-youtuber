@@ -1,4 +1,4 @@
-const imageDownloader = require('image-downloader')
+const imageDownloader = require('image-downloader');
 const google = require('googleapis').google;
 const customSearch = google.customsearch('v1');
 const state = require('./state.js');
@@ -10,8 +10,7 @@ async function robot() {
 
     await fetchImagesOfAllSentences(content);
     await downloadAllImages(content);
-
-
+  
     state.save(content);
 
     async function fetchImagesOfAllSentences(content) {
@@ -41,7 +40,7 @@ async function robot() {
 
     async function downloadAllImages(content) {
         content.downloadedImages = [];
-        
+
         for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++) {
             const images = content.sentences[sentenceIndex].images;
 
