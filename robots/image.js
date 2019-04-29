@@ -10,7 +10,7 @@ async function robot() {
 
     await fetchImagesOfAllSentences(content);
     await downloadAllImages(content);
-  
+
     state.save(content);
 
     async function fetchImagesOfAllSentences(content) {
@@ -49,7 +49,7 @@ async function robot() {
 
                 try {
                     if (content.downloadedImages.includes(imageUrl)) {
-                        throw new Error('Imagem já foi baixada');
+                        throw new Error('Image already downloaded');
                     }
 
                     await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`);
@@ -65,8 +65,8 @@ async function robot() {
 
     async function downloadAndSave(url, fileName) {
         return imageDownloader.image({
-            url: url,
-            dist: `./content/${fileName}`
+            url, url,
+            dest: `./content/${fileName}`
         })
     }
 

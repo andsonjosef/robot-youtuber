@@ -54,7 +54,7 @@ async function robot() {
                         return reject(error);
                     }
 
-                    console.log(`> Image converted: ${inputFile}`)
+                    console.log(`> Image converted: ${inputFile}`);
                     resolve();
                 })
 
